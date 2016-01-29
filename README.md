@@ -28,3 +28,28 @@ xhrObj.onreadystatechange=function(){
 xhrObj.open('GET','A.js',true);
 xhrObj.send();
 ```
+
+iframe
+in html
+```html
+<iframe width=0 height=0 frameborder=0 src='a.html' id=xx></iframe>
+```
+
+js:
+```js
+window.frames[0].createNewDiv();
+document.getElementById('xx').contentWindow.createNewDiv();
+
+function createDiv(){
+var newd = parent.document.createElement('div');
+parent.document.body.appendChild(newd);
+```
+
+
+script DOM
+```js
+var elem = document.createElement('script');
+elem.src='a.js';
+document.getElememtByTagName('head')[0].appendChild(elem);
+```
+
